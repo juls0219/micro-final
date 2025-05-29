@@ -5,18 +5,12 @@
   }
   
   body {
-    margin: 0;
-    padding: 0;
-    font-family: antarctica;
-    height: 100vh;
-    background-image: url(imagenes/fondo_microplasticos.jpeg);
-    background-position: center;
-    background-repeat: no-repeat;
-    height: 100vh;
-    margin: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+   margin: 0;
+  padding: 0;
+  font-family: 'Martian Mono', monospace;
+  background-color: black;
+  background-position: center;
+  background-repeat: no-repeat;
   }
   
   header {
@@ -25,8 +19,57 @@
     align-items: center;
   }
   
-  .logo svg {
-    height: 100px;
-    width: auto;
+  p {
+    color: white;
+    font-size: 16px;
+    text-align: justify;
+    margin-top: 20px;
   }
-  
+
+  h2 {
+    color: white;
+    font-size: 20px;
+    text-align: center;
+  }
+
+.logo {
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+
+.logo img {
+  margin-top: 40px;
+    height: 70px;
+    width: auto;
+}
+
+.botones {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 50px;
+}
+
+.boton {
+  border: 4px solid rgb(218, 255, 62);
+  background: transparent;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 12px;
+  text-decoration: none;
+  font-family: inherit;
+  font-size: 16px;
+}
+
+.boton:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.seccion-oculta {
+  display: none;
+  color: white;
+  max-width: 700px;
+  margin: 50px auto;
+  text-align: center;
+}
