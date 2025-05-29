@@ -89,7 +89,8 @@ class FallingSVGAnimation {
     });
     
     tl.to(item, {
-      y: window.innerHeight + 100,
+      x: window.innerHeight + 33,
+      y: window.innerHeight + 13,
       rotation: rotation,
       duration: duration,
       ease: "none"
