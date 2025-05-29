@@ -12,4 +12,14 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   window.mostrarSeccion = mostrarSeccion;
+   // Inicializa la animación
+  const animation = new FallingSVGAnimation({
+    maxItems: 10,
+    minSize: 10,
+    maxSize: 20,
+    minDuration: 3,
+    maxDuration: 13,
+  });
+
+  animation.init();
 });
