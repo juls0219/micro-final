@@ -49,13 +49,13 @@ class FallingSVGAnimation {
   
   createItem() {
     //cambiar div por img
-    const item = document.createElement('div');
+    const item = document.createElement('img');
     item.className = 'falling-svg';
       
     // Obtiene un SVG aleatorio de la colección
     const svgIndex = Math.floor(Math.random() * this.svgCollection.length);
    // cambiar innerHTML por src
-    item.innerHTML = this.svgCollection[svgIndex];
+    item.src = this.svgCollection[svgIndex];
       
     // Propiedades aleatorias para el SVG
     const size = this.getRandomBetween(this.minSize, this.maxSize);
