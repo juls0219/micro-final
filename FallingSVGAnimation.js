@@ -10,8 +10,41 @@ class FallingSVGAnimation {
       this.maxDuration = config.maxDuration || 8;
       this.minDelay = config.minDelay || 0.1;
       this.maxDelay = config.maxDelay || 0.5;
+      this.fichasTecnicas = config.fichasTecnicas || {};
       
+    
+
       this.items = [];
+
+      this.fichas = {
+      'imagenes/1x/acondicionador.png': 'Acondicionador para el cabello, 200ml. Ideal para suavizar y desenredar.',
+      'imagenes/1x/audifonos.png': 'Audífonos inalámbricos, con cancelación de ruido y batería de larga duración.',
+      'imagenes/1x/botella.png': 'Botella de agua reutilizable, 500ml. Hecha de acero inoxidable, mantiene la temperatura.',
+      'imagenes/1x/cepillo.png': 'Cepillo de dientes eléctrico, con temporizador y cabezales intercambiables.',
+      'imagenes/1x/coca.png': 'Botella de Coca-Cola, 500ml. Bebida refrescante con sabor clásico.',
+      'imagenes/1x/cotonete.png': 'Cotonetes de algodón, paquete de 100 unidades. Perfectos para limpieza y cuidado personal.',
+      'imagenes/1x/croc.png': 'Zapatillas Crocs, talla 42. Comodidad y estilo para el día a día.',
+      'imagenes/1x/cuchara_cocina.png': 'Cuchara de cocina de acero inoxidable, 30cm. Ideal para mezclar y servir alimentos.',
+      'imagenes/1x/cuchara_desechable.png': 'Cucharas desechables de plástico, paquete de 50 unidades. Perfectas para fiestas y eventos.',
+      'imagenes/1x/dulce.png':  'Dulce de chocolate, 100g. Delicioso y cremoso, ideal para un antojo dulce.',
+      'imagenes/1x/esmalte.png': 'Esmalte de uñas, color rojo brillante. Fórmula de larga duración y secado rápido.',
+      'imagenes/1x/espatula.png': 'Espátula de silicona, 25cm. Resistente al calor, ideal para cocinar y hornear.',
+      'imagenes/1x/esponja.png': 'Esponja de cocina, paquete de 3 unidades. Ideal para lavar platos y utensilios.',
+      'imagenes/1x/lentes.png': 'Lentes de sol, protección UV400. Diseño moderno y ligero, ideal para el verano.',
+      'imagenes/1x/licras.png': 'Licras deportivas, talla M. Comodidad y elasticidad para tus entrenamientos.',
+      'imagenes/1x/playera.png': 'Playera de algodón, talla L. Suave y cómoda, ideal para el uso diario.',
+      'imagenes/1x/rastrillo.png': 'Rastrillo de afeitar, con 5 hojas. Cuchillas de precisión para un afeitado suave y apurado.',
+      'imagenes/1x/rimel.png': 'Rímel volumizador, color',
+      'imagenes/1x/rollo.png': 'Rollo de papel higiénico, 12 unidades. Suave y resistente, ideal para el hogar.',
+      'imagenes/1x/shampoo.png': 'Champú hidratante, 250ml. Fórmula nutritiva para un cabello suave y brillante.',
+      'imagenes/1x/tenedor.png': 'Tenedor de acero inoxidable, 20cm. Diseño ergonómico y duradero, ideal para el uso diario.',
+      'imagenes/1x/toallas_humedas.png': 'Toallas húmedas desechables, paquete de 50 unidades. Perfectas para limpieza rápida y refrescante.',
+      'imagenes/1x/top.png': 'Top deportivo, talla S. Comodidad y soporte para tus actividades físicas.',
+      'imagenes/1x/toper_marca.png': 'Topper de marca, 1.5L. Ideal para almacenar alimentos y mantenerlos frescos.',
+      'imagenes/1x/topper_tapa.png': 'Tapa de topper, 1.5L. Cierre hermético para conservar la frescura de tus alimentos.',
+      // Agrega más fichas según las imágenes que uses
+    };
+
       this.init();
   }
   
@@ -67,10 +100,12 @@ class FallingSVGAnimation {
     
     // Aplica propiedades iniciales
     gsap.set(item, {
-        width: size,
-        height: size,
+        //width: size,
+        //height: size,
+        width: 'auto',
+        height: 'auto',
         x: startX,
-        y: -size - 10,
+        y: -100,
         opacity: opacity,
         color: color
     });
@@ -80,7 +115,37 @@ class FallingSVGAnimation {
     // Crea la animación
     this.animateItem(item, duration, rotation);
     
+    item.addEventListener('click', (evento) => {
+      console.log('click en item', evento.target.src);
+      this.pause(); // Detiene la animación de todos los objetos
+
+      // Elimina ficha previa
+      const existing = document.querySelector('.ficha-tecnica');
+      if (existing) existing.remove();
+      console.log('hasta aqui llegamos, POR AHORA');
+
+      // Crea nueva ficha
+      const ficha = document.createElement('div');
+      ficha.className = 'ficha-tecnica';
+      ficha.innerText = this.fichas[src] || 'No hay ficha técnica disponible.';
+      ficha.style.position = 'fixed';
+      ficha.style.top = '20px';
+      ficha.style.left = '20px';
+      ficha.style.background = 'rgba(255,255,255,0.9)';
+      ficha.style.padding = '10px 15px';
+      ficha.style.border = '1px solid #ccc';
+      ficha.style.borderRadius = '8px';
+      ficha.style.maxWidth = '300px';
+      ficha.style.fontFamily = 'sans-serif';
+      ficha.style.zIndex = '9999';
+
+      this.container.style.border = '1px solid red';
+
+      this.container.appendChild(ficha);
+    });
+
     this.items.push(item);
+    
   }
   
   animateItem(item, duration, rotation) {
@@ -113,10 +178,12 @@ class FallingSVGAnimation {
     item.innerHTML = this.svgCollection[svgIndex];
       
     gsap.set(item, {
-        width: size,
-        height: size,
+        //width: size,
+        //height: size,
+        width: 'auto',
+        height: 'auto',
         x: startX,
-        y: -size - 10,
+        y: -100,
         opacity: opacity,
         color: color,
         rotation: 0
@@ -138,10 +205,19 @@ class FallingSVGAnimation {
   // Métodos para pausar, reanudar y destruir la animación
   pause() {
     gsap.globalTimeline.pause();
+    this.items.forEach(item => {
+      if (item._timeline) item._timeline.pause();
+    });
   }
   
   resume() {
     gsap.globalTimeline.resume();
+    this.items.forEach(item => {
+      if (item._timeline) item._timeline.resume();
+    });
+
+    const ficha = document.querySelector('.ficha-tecnica');
+    if (ficha) ficha.remove();
   }
   
   destroy() {
@@ -154,5 +230,39 @@ class FallingSVGAnimation {
   
   updateSVGCollection(newCollection) {
     this.svgCollection = newCollection;
+  }
+
+  getRandomBetween(min, max) {
+    return Math.random() * (max - min) + min;
+  }
+
+  getDefaultSVGs() {
+    return [
+      'imagenes/1x/acondicionador.png',
+      'imagenes/1x/audifonos.png',
+      'imagenes/1x/botella.png',
+      'imagenes/1x/cepillo.png',
+      'imagenes/1x/coca.png',
+      'imagenes/1x/cotonete.png',
+      'imagenes/1x/croc.png',
+      'imagenes/1x/cuchara_cocina.png',
+      'imagenes/1x/cuchara_desechable.png',
+      'imagenes/1x/dulce.png',
+      'imagenes/1x/esmalte.png',
+      'imagenes/1x/espatula.png',
+      'imagenes/1x/esponja.png',
+      'imagenes/1x/lentes.png',
+      'imagenes/1x/licras.png',
+      'imagenes/1x/playera.png',
+      'imagenes/1x/rastrillo.png',
+      'imagenes/1x/rimel.png',
+      'imagenes/1x/rollo.png',
+      'imagenes/1x/shampoo.png',
+      'imagenes/1x/tenedor.png',
+      'imagenes/1x/toallas_humedas.png',
+      'imagenes/1x/top.png',
+      'imagenes/1x/toper_marca.png',
+      'imagenes/1x/topper_tapa.png'
+    ];
   }
 }

@@ -73,3 +73,12 @@
   margin: 50px auto;
   text-align: center;
 }
+
+.falling-svg {
+  width: auto;
+  height: auto;
+  max-width: 120px;     /* ajusta este valor según lo grande que quieras */
+  max-height: 120px;    /* ajusta este valor según lo grande que quieras */
+  object-fit: contain;
+  position: absolute;
+}
