@@ -85,3 +85,7 @@
   object-fit: contain;
   position: absolute;
 }
+
+.ficha-tecnica{
+  background-color: pink;
+}

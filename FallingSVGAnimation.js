@@ -136,14 +136,15 @@ class FallingSVGAnimation {
       ficha.className = 'ficha-tecnica';
       ficha.innerText = this.fichas[ `imagenes/1x/${src}` ] || 'No hay ficha técnica disponible.';
       ficha.style.position = 'fixed';
-      ficha.style.top = '20px';
-      ficha.style.left = '20px';
-      ficha.style.background = 'rgba(255,255,255,0.9)';
+      ficha.style.top = '50%';
+      ficha.style.left = '50%';
+      ficha.style.transform = 'translate(-50%, -50%)';
+      ficha.style.backgroundColor = 'rgba(255,255,255,0.9)';
       ficha.style.padding = '10px 15px';
       ficha.style.border = '1px solid #ccc';
       ficha.style.borderRadius = '8px';
       ficha.style.maxWidth = '300px';
-      ficha.style.fontFamily = 'sans-serif';
+      ficha.style.fontFamily = 'Arial, sans-serif';
       ficha.style.zIndex = '9999';
 
       // Botón para cerrar la ficha
