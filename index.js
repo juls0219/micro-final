@@ -46,8 +46,8 @@ document.addEventListener('DOMContentLoaded', () => {
     maxItems: 10,
     minSize: 30,
     maxSize: 60,
-    minDuration: 3,
-    maxDuration: 13,
+    minDuration: 13,
+    maxDuration: 33,
     svgCollection: jpgs,
   }
   const animation = new FallingSVGAnimation(config);

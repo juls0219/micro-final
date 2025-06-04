@@ -6,8 +6,8 @@ class FallingSVGAnimation {
       this.maxItems = config.maxItems || 20;
       this.minSize = config.minSize || 30;
       this.maxSize = config.maxSize || 80;
-      this.minDuration = config.minDuration || 3;
-      this.maxDuration = config.maxDuration || 8;
+      this.minDuration = config.minDuration || 12;
+      this.maxDuration = config.maxDuration || 18;
       this.minDelay = config.minDelay || 0.1;
       this.maxDelay = config.maxDelay || 0.5;
       this.fichasTecnicas = config.fichasTecnicas || {};
@@ -116,18 +116,25 @@ class FallingSVGAnimation {
     this.animateItem(item, duration, rotation);
     
     item.addEventListener('click', (evento) => {
-      console.log('click en item', evento.target.src);
+      console.log('click en item');
+
+      const src = evento.target.src.split('/').pop(); // Obtiene el nombre del archivo de la URL
+      const fullPath = `imagenes/1x/${src}`;
+      
+      console.log(this.fichas[fullPath]);
+
       this.pause(); // Detiene la animación de todos los objetos
+
 
       // Elimina ficha previa
       const existing = document.querySelector('.ficha-tecnica');
       if (existing) existing.remove();
-      console.log('hasta aqui llegamos, POR AHORA');
+      
 
       // Crea nueva ficha
       const ficha = document.createElement('div');
       ficha.className = 'ficha-tecnica';
-      ficha.innerText = this.fichas[src] || 'No hay ficha técnica disponible.';
+      ficha.innerText = this.fichas[ `imagenes/1x/${src}` ] || 'No hay ficha técnica disponible.';
       ficha.style.position = 'fixed';
       ficha.style.top = '20px';
       ficha.style.left = '20px';
@@ -139,7 +146,16 @@ class FallingSVGAnimation {
       ficha.style.fontFamily = 'sans-serif';
       ficha.style.zIndex = '9999';
 
-      this.container.style.border = '1px solid red';
+      // Botón para cerrar la ficha
+      const closeButton = document.createElement('button');
+      closeButton.innerText = 'Cerrar';
+
+      ficha.appendChild(closeButton);
+
+      closeButton.addEventListener('click', () => {
+        console.log("cerrar ficha");
+        this.resume(); // Reanuda la animación de todos los objetos
+      });
 
       this.container.appendChild(ficha);
     });
