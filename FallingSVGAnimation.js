@@ -17,31 +17,31 @@ class FallingSVGAnimation {
       this.items = [];
 
       this.fichas = {
-      'imagenes/1x/acondicionador.png': 'Acondicionador para el cabello, 200ml. Ideal para suavizar y desenredar.',
-      'imagenes/1x/audifonos.png': 'Audífonos inalámbricos, con cancelación de ruido y batería de larga duración.',
-      'imagenes/1x/botella.png': 'Botella de agua reutilizable, 500ml. Hecha de acero inoxidable, mantiene la temperatura.',
-      'imagenes/1x/cepillo.png': 'Cepillo de dientes eléctrico, con temporizador y cabezales intercambiables.',
-      'imagenes/1x/coca.png': 'Botella de Coca-Cola, 500ml. Bebida refrescante con sabor clásico.',
-      'imagenes/1x/cotonete.png': 'Cotonetes de algodón, paquete de 100 unidades. Perfectos para limpieza y cuidado personal.',
-      'imagenes/1x/croc.png': 'Zapatillas Crocs, talla 42. Comodidad y estilo para el día a día.',
-      'imagenes/1x/cuchara_cocina.png': 'Cuchara de cocina de acero inoxidable, 30cm. Ideal para mezclar y servir alimentos.',
-      'imagenes/1x/cuchara_desechable.png': 'Cucharas desechables de plástico, paquete de 50 unidades. Perfectas para fiestas y eventos.',
-      'imagenes/1x/dulce.png':  'Dulce de chocolate, 100g. Delicioso y cremoso, ideal para un antojo dulce.',
-      'imagenes/1x/esmalte.png': 'Esmalte de uñas, color rojo brillante. Fórmula de larga duración y secado rápido.',
-      'imagenes/1x/espatula.png': 'Espátula de silicona, 25cm. Resistente al calor, ideal para cocinar y hornear.',
-      'imagenes/1x/esponja.png': 'Esponja de cocina, paquete de 3 unidades. Ideal para lavar platos y utensilios.',
-      'imagenes/1x/lentes.png': 'Lentes de sol, protección UV400. Diseño moderno y ligero, ideal para el verano.',
-      'imagenes/1x/licras.png': 'Licras deportivas, talla M. Comodidad y elasticidad para tus entrenamientos.',
-      'imagenes/1x/playera.png': 'Playera de algodón, talla L. Suave y cómoda, ideal para el uso diario.',
-      'imagenes/1x/rastrillo.png': 'Rastrillo de afeitar, con 5 hojas. Cuchillas de precisión para un afeitado suave y apurado.',
-      'imagenes/1x/rimel.png': 'Rímel volumizador, color',
-      'imagenes/1x/rollo.png': 'Rollo de papel higiénico, 12 unidades. Suave y resistente, ideal para el hogar.',
-      'imagenes/1x/shampoo.png': 'Champú hidratante, 250ml. Fórmula nutritiva para un cabello suave y brillante.',
-      'imagenes/1x/tenedor.png': 'Tenedor de acero inoxidable, 20cm. Diseño ergonómico y duradero, ideal para el uso diario.',
-      'imagenes/1x/toallas_humedas.png': 'Toallas húmedas desechables, paquete de 50 unidades. Perfectas para limpieza rápida y refrescante.',
-      'imagenes/1x/top.png': 'Top deportivo, talla S. Comodidad y soporte para tus actividades físicas.',
-      'imagenes/1x/toper_marca.png': 'Topper de marca, 1.5L. Ideal para almacenar alimentos y mantenerlos frescos.',
-      'imagenes/1x/topper_tapa.png': 'Tapa de topper, 1.5L. Cierre hermético para conservar la frescura de tus alimentos.',
+      'imagenes/1x/acondicionador.png': 'Tiempo de degradación: 500-1,000 años. Liberación de químico: Alta (libera nonilfenoles y ftalatos). Tipo de plástico: HDPE (Polietileno de alta densidad)',
+      'imagenes/1x/audifonos.png': 'Tiempo de degradación: 1,000 años. Liberación de químico: Alta (libera retardantes de llama y plastificantes). Tipo de plástico: ABS, PVC, Policarbonato',
+      'imagenes/1x/botella.png': 'Tiempo de degradación: 400-500 años. Liberación de químico: Alta (libera antimonio y ftalatos). Tipo de plástico: PET (Polietileno Tereftalato).',
+      'imagenes/1x/cepillo.png': 'Tiempo de degradación: 500 años. Liberación de químico: Moderada (puede liberar bisfenol A y microfibras). Tipo de plástico: PP (Polipropileno) y nylon.',
+      'imagenes/1x/coca.png': 'Tiempo de degradación: 400-500 años. Liberación de químico: Alta (libera antimonio y acetaldehído). Tipo de plástico: PET (Polietileno Tereftalato).',
+      'imagenes/1x/cotonete.png': 'Tiempo de degradación: 300 años. Liberación de químico: Baja (depende del uso del bastoncillo). Tipo de plástico: PP (Polipropileno) + algodón.',
+      'imagenes/1x/croc.png': 'Tiempo de degradación: 1,000 años. Liberación de químico: Moderada (libera acetato y aditivos). Tipo de plástico:  EVA (Etileno-Vinil Acetato).',
+      'imagenes/1x/cuchara_cocina.png': 'Tiempo de degradación: 200-500 años. Liberación de químico: Moderada (libera aminas y compuestos aromáticos). Tipo de plástico:  Nylon o silicona con PA.)..',
+      'imagenes/1x/cuchara_desechable.png': 'Tiempo de degradación: 100-1,000 años. Liberación de químico: Alta (libera estireno y otros disruptores endocrinos). Tipo de plástico:  PS (Poliestireno).',
+      'imagenes/1x/dulce.png':  'Tiempo de degradación:  20-200 años. Tipo de plástico: PP + aluminio + PET (multicapa). Liberación de químico: Alta (difícil de reciclar, libera múltiples químicos)',
+      'imagenes/1x/esmalte.png': 'Tiempo de degradación: Indeterminado. Tipo de plástico: PP/PET (en brochas/tapas)Liberación de químico: Alta (libera ftalatos, formaldehído, tolueno)',
+      'imagenes/1x/espatula.png': 'Tiempo de degradación:  200-500 años. Tipo de plástico: Silicona + PA o PP. Liberación de químico: Moderada (libera aminas o siliconas volátiles)',
+      'imagenes/1x/esponja.png': 'Tiempo de degradación: 500 años. Tipo de plástico:  PU (Poliuretano). Liberación de químico: Alta (libera microplásticos y disocianatos)',
+      'imagenes/1x/lentes.png': 'Tiempo de degradación: 500-1,000 años. Tipo de plástico: Policarbonato (PC). Liberación de químico: Alta (libera bisfenol A',
+      'imagenes/1x/licras.png': 'Tiempo de degradación: 500 años. Tipo de plástico: Elastano (spandex) + poliéster. Liberación de químico: Alta (libera microfibras y aditivos)',
+      'imagenes/1x/playera.png': 'Tiempo de degradación: 500 años. Tipo de plástico: Poliéster. Liberación de químico: Alta (libera microfibras)',
+      'imagenes/1x/rastrillo.png': 'Tiempo de degradación: 500-1,000 años. Tipo de plástico: ABS + TPE (elastómeros). Liberación de químico: Alta (libera bisfenoles y aditivos)',
+      'imagenes/1x/rimel.png': 'Tiempo de degradación: Hasta 1,000 años. Tipo de plástico: PP/PET/PE (en tubo y cepillo).  Liberación de químico: Alta (libera microplásticos y compuestos hormonales)',
+      'imagenes/1x/rollo.png': 'Tiempo de degradación hasta 1,000 años. Tipo de plástico: PET + policarbonato. Liberación de químico:  Alta (contiene plata y solventes)',
+      'imagenes/1x/shampoo.png': 'Tiempo de degradación: 500-1,000 años. Tipo de plástico: HDPE o PET. Liberación de químico:  Alta (libera ftalatos y compuestos sintéticos)',
+      'imagenes/1x/tenedor.png': 'Tiempo de degradación: 100-1,000 años. Tipo de plástico: PS (Poliestireno). Liberación de químico: Alta (libera estireno y microplásticos)',
+      'imagenes/1x/toallas_humedas.png': 'Tiempo de degradación: 100 años. Tipo de plástico: Poliéster + viscosa. Liberación de químico: Alta (libera microfibras plásticas)',
+      'imagenes/1x/top.png': 'Tiempo de degradación: 500 años. Tipo de plástico:Nylon + elastano. Liberación de químico:Alta (libera microfibras)',
+      'imagenes/1x/toper_marca.png': 'Tiempo de degradación: 450 años. Tipo de plástico: PP o PE (dependiendo del modelo). Liberación de químico: Moderada (libera ftalatos y BPA si se calienta)',
+      'imagenes/1x/topper_tapa.png': 'Tiempo de degradación: 450 años. Tipo de plástico: PP o PE (dependiendo del modelo). Liberación de químico: Moderada (libera ftalatos y BPA si se calienta)',
       // Agrega más fichas según las imágenes que uses
     };
 
@@ -139,17 +139,24 @@ class FallingSVGAnimation {
       ficha.style.top = '50%';
       ficha.style.left = '50%';
       ficha.style.transform = 'translate(-50%, -50%)';
-      ficha.style.backgroundColor = 'rgba(255,255,255,0.9)';
+      ficha.style.backgroundColor = 'rgba(0, 0, 0, 0.9)';
       ficha.style.padding = '10px 15px';
-      ficha.style.border = '1px solid #ccc';
+      ficha.style.border = '4px solid rgb(218, 255, 62)';
       ficha.style.borderRadius = '8px';
       ficha.style.maxWidth = '300px';
-      ficha.style.fontFamily = 'Arial, sans-serif';
+      ficha.style.fontFamily = 'Martian Mono, monospace';
+      ficha.style.color = 'white';
       ficha.style.zIndex = '9999';
 
       // Botón para cerrar la ficha
       const closeButton = document.createElement('button');
       closeButton.innerText = 'Cerrar';
+
+      closeButton.style.fontFamily = 'Martian Mono, monospace';
+      closeButton.style.borderRadius = '8px';
+      closeButton.style.backgroundColor = 'rgb(218, 255, 62)';
+      closeButton.style.color = 'black';
+      closeButton.style.padding = '5px 10px';
 
       ficha.appendChild(closeButton);
 
